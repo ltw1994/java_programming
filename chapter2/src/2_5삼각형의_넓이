@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double x1, x2, x3, y1, y2, y3;
+        double side1, side2, side3 ;
+        double s, area ;
+        Scanner scan = new Scanner(System.in);
+        x1 = scan.nextDouble() ;
+        y1 = scan.nextDouble() ;
+        x2 = scan.nextDouble() ;
+        y2 = scan.nextDouble() ;
+        x3 = scan.nextDouble() ;
+        y3 = scan.nextDouble() ;
+
+        side1 = cal_length(x1, y1, x2, y2) ;
+        side2 = cal_length(x1, y1, x3, y3) ;
+        side3 = cal_length(x2, y2, x3, y3) ;
+
+        s = (side1 + side2 + side3) / 2 ;
+        area = Math.sqrt(s * (s-side1) * (s-side2) * (s - side3)) ;
+        area *= 10 ;
+        area =  Math.floor(area) ;
+        area /= 10.0 ;
+        System.out.println(area);
+
+    }
+
+    public static double cal_length(double x1, double y1, double x2, double y2){
+        double side ;
+
+        side = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2)) ;
+        return side ;
+    }
+}

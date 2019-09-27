@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double W, H, BMI;
+        Scanner scan = new Scanner(System.in);
+        W = scan.nextDouble() ;
+        H = scan.nextDouble() ;
+        W *= 0.45359237 ;
+        H *= 0.0254 ;
+        BMI = W / (H * H) ;
+        BMI *= 100 ;
+        BMI = Math.floor(BMI) ;
+        BMI /= 100.0 ;
+        System.out.println(BMI);
+    }
+}
