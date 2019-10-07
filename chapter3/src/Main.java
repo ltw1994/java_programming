@@ -2,40 +2,55 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int h, q, m, j, k, y;
+        double x1, y1, x2, y2, x3, y3, x4, y4;
+        double x, y;
+        double lcm_num ;
+        double a, b, c, d, e, f, P ;
+
 
         Scanner scan = new Scanner(System.in);
-        y = scan.nextInt();
-        m = scan.nextInt();
-        q = scan.nextInt();
+        x1 = scan.nextDouble();
+        y1 = scan.nextDouble();
+        x2 = scan.nextDouble();
+        y2 = scan.nextDouble();
+        x3 = scan.nextDouble();
+        y3 = scan.nextDouble();
+        x4 = scan.nextDouble();
+        y4 = scan.nextDouble();
 
-        if (m == 1) {
-            m = 13;
-            y -= 1;
-        } else if (m==2) {
-            m = 14;
-            y -= -1;
+        a = x1 - x2 ;
+        b = y1 - y2 ;
+        c = x3 - x4 ;
+        d = y3 - y4 ;
+        e = a * y1 + b * x1 ;
+        P =
+
+        if ((x2 - x1) / (y2 - y1) == (x4 - x3) / (y4 - y3)) {
+            System.out.println("parallel");
         }
 
-        j = y / 100;
-        k = y % 100;
+        lcm_num = lcm(a, c) ;
 
-        h = (q + (26 * (m + 1) / 10) + k + (k / 4) + (j / 4) + 5 * j) % 7;
+        b *= lcm_num / a ;
 
-        if (h == 0) {
-            System.out.println("Saturday");
-        } else if (h == 1) {
-            System.out.println("Sunday");
-        } else if (h == 2) {
-            System.out.println("Monday");
-        } else if (h == 3) {
-            System.out.println("Tuesday");
-        } else if (h == 4) {
-            System.out.println("Wednesday");
-        } else if (h == 5) {
-            System.out.println("Thursday");
-        } else if (h == 6) {
-            System.out.println("Friday");
+        d *= lcm_num / c ;
+
+    }
+
+
+    private static double gcd(double num1, double num2) {
+
+        while (num2 > 0) {
+            double temp = num2;
+            num2 = num1 % num2;
+            num1 = temp;
         }
+
+        return num1;
+    }
+
+    private static double lcm(double num1, double num2) {
+
+        return (num1 * num2) / gcd(num1, num2);
     }
 }

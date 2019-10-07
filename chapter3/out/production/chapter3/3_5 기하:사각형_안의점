@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double x, y ;
+        boolean inx, iny ;
+        inx = false ;
+        iny = false ;
+
+        Scanner scan = new Scanner(System.in);
+        x = scan.nextDouble();
+        y = scan.nextDouble();
+
+        if (((x == 5 || x == 5) && (y <= 2.5 || y >= -2.5)) || ((y == 2.5 || y == -2.5) && (x <= 5 || x >= -5))) {
+            System.out.println("on") ;
+        }
+        else if ((x < 5 && x > -5) && ( y < 2.5 && y > -2.5)) {
+            System.out.println("in") ;
+        }
+        else {
+            System.out.println("out") ;
+
+        }
+
+    }
+}
