@@ -1,0 +1,51 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double x1, y1, w1, h1, x2, y2, w2, h2;
+        double min_x, min_y, max_x, max_y ;
+        double test_min_x, test_min_y, test_max_x, test_max_y ;
+
+        Scanner scan = new Scanner(System.in);
+        x1 = scan.nextDouble();
+        y1 = scan.nextDouble();
+        w1 = scan.nextDouble();
+        h1 = scan.nextDouble();
+        x2 = scan.nextDouble();
+        y2 = scan.nextDouble();
+        w2 = scan.nextDouble();
+        h2 = scan.nextDouble();
+
+        max_x = x1 + w1 / 2 ;
+        max_y = y1 + h1 / 2 ;
+        min_x = x1 - w1 / 2 ;
+        min_y = y1 - h1 / 2 ;
+
+        test_max_x = x2 + w2 / 2 ;
+        test_max_y = y2 + h2 / 2 ;
+        test_min_x = x2 - w2 / 2 ;
+        test_min_y = y2 - h2 / 2 ;
+
+        if(test_max_x <= max_x && test_max_y <= max_y && test_min_x >= min_x && test_min_y >= min_y) {
+            System.out.println("inside");
+        }
+        else if (test_max_x == min_x && (test_max_y > min_y && test_min_y < max_y)) {
+            System.out.println("attach");
+        }
+        else if (test_max_y == min_y && (test_max_x > min_x && test_min_x < max_x)) {
+            System.out.println("attach");
+        }
+        else if (test_min_x == max_x && (test_max_y > min_y && test_min_y < max_y)) {
+            System.out.println("attach");
+        }
+        else if (test_min_y == max_y && (test_max_x > min_x && test_min_x < max_x)) {
+            System.out.println("attach");
+        }
+        else {
+            System.out.println("outside");
+        }
+
+        }
+
+
+}

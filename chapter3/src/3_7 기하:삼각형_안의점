@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double x, y;
+        double xx = 200 ;
+        double yy = 100 ;
+
+        Scanner scan = new Scanner(System.in);
+        x = scan.nextDouble();
+        y = scan.nextDouble();
+
+        if (0 <=  x && x <= 200) {
+            if (y == 0) {
+                System.out.println("on");
+            }
+            else if (y == (100 - (x / 2))) {
+                System.out.println("on");
+            }
+            else if (0 < y && y < (x / 2)) {
+                System.out.println("in");
+            }
+            else {
+                System.out.println("out");
+            }
+        }
+        else if(x == 0 && 0 <= y && y <= 100) {
+            System.out.println("on");
+        }
+        else {
+            System.out.println("out");
+        }
+
+        }
+
+
+}

@@ -2,8 +2,11 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        double x1, y1, x2, y2, x3, y3, x4, y4 ;
-        double x, y ;
+        double x1, y1, x2, y2, x3, y3, x4, y4;
+        double x, y;
+        double lcm_num ;
+        double a, b, c, d, e, f, m1, m2 ;
+
 
         Scanner scan = new Scanner(System.in);
         x1 = scan.nextDouble();
@@ -15,14 +18,35 @@ public class Main {
         x4 = scan.nextDouble();
         y4 = scan.nextDouble();
 
-
-
+        a=y1-y2;
+        b=x2-x1;
+        c=y3-y4;
+        d=x4-x3;
+        e=(y1-y2)*x1-(x1-x2)*y1;
+        f=(y3-y4)*x3-(x3-x4)*y3;
         if ((x2 - x1) / (y2 - y1) == (x4 - x3) / (y4 - y3)) {
-            System.out.println("parallel") ;
+            System.out.println("parallel");
         }
+        else {
+            m1 = (e * d - b * f) / (a * d - b * c);
+            m2 = (a * f - e * c) / (a * d - b * c);
 
+            if (m1 < 0) {
+                m1 = (-1) * m1;
+                m1 = Math.floor(m1 * 10) / 10;
+                m1 = (-1) * m1;
+            }
+            else m1 = Math.floor(m1 * 10) / 10; ;
+            if (m2 < 0) {
+                m2 = (-1) * m2;
+                m2 = Math.floor(m2 * 10) / 10;
+                m2 = (-1) * m2;
+            }
+            else m1 = Math.floor(m2 * 10) / 10; ;
+            System.out.printf("%.1f %.1f", m1, m2);
 
         }
 
     }
+
 }
