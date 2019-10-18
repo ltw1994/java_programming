@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+        public static void main(String[] args) {
+                String s, major, grade ;
+
+
+                Scanner scan = new Scanner(System.in);
+                s = scan.nextLine() ;
+                char m = s.charAt(0);
+                char g = s.charAt(1);
+                //System.out.println(s.substring(0,1));
+                if(m == 'M') {
+                        major = "Mathematics" ;
+                }
+                else if(m == 'C') {
+                        major = "Computer Science" ;
+                }
+                else{
+                        major = "Information Technology" ;
+                }
+                if(g == '1') {
+                        grade = "Freshman" ;
+                }
+                else if(g == '2') {
+                        grade = "Sophomore" ;
+                }
+                else if(g == '3') {
+                        grade = "Junior" ;
+                }
+                else{
+                        grade = "Senior";
+                }
+                System.out.println(major + " " + grade);
+
+        }
+}

@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class Main {
+        public static void main(String[] args) {
+                int n, s, area;
+
+                Scanner scan = new Scanner(System.in);
+                n = scan.nextInt();
+                System.out.format("%x%n", n);
+        }
+}

@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double r, s, a, b, area;
+
+        Scanner scan = new Scanner(System.in);
+        r = scan.nextDouble();
+        a = Math.toRadians(36) ;
+        s = 2 * r * Math.sin(a) ;
+        area = (5 * s * s) / (4 * Math.tan(a)) ;
+        area = Math.round(area*100) / 100.0 ;
+        System.out.println(area);
+
+    }
+}
